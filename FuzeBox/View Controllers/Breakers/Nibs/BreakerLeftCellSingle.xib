@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0RB-Ec-9au" customClass="CTRLBreakerCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0RB-Ec-9au" id="wnM-Gn-9QR">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qed-kI-OlQ" userLabel="Amperage Container">
+                        <rect key="frame" x="292" y="6" width="18" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="0nM-g5-lmV"/>
+                            <constraint firstAttribute="width" constant="18" id="1Yw-37-6MR"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="240" verticalHuggingPriority="251" horizontalCompressionResistancePriority="747" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRr-Mx-aSz" userLabel="Name Label">
+                        <rect key="frame" x="146" y="6" width="129" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="129" id="5Yi-tx-Lkf"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="FHx-st-YC2"/>
+                            <constraint firstAttribute="height" constant="31" id="NYv-N7-pJm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <color key="textColor" red="0.66274509800000003" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AF-8n-GTZ" userLabel="OnOffSwitch Container">
+                        <rect key="frame" x="0.0" y="0.0" width="85" height="43"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IBq-O7-wxC" userLabel="Switch Container">
+                                <rect key="frame" x="17" y="5" width="51" height="33"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="85" id="DkE-Nq-E8l"/>
+                        </constraints>
+                    </view>
+                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="breakerGFCI" translatesAutoresizingMaskIntoConstraints="NO" id="QQp-A1-b2V" userLabel="GFCI">
+                        <rect key="frame" x="133" y="10" width="11" height="24"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="3Fw-ol-ypB"/>
+                            <constraint firstAttribute="width" constant="11" id="A3J-Zt-rkE"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="lRr-Mx-aSz" secondAttribute="bottom" constant="6" id="8BH-yN-Dw6"/>
+                    <constraint firstAttribute="trailing" secondItem="qed-kI-OlQ" secondAttribute="trailing" constant="10" id="8dv-Lh-yeg"/>
+                    <constraint firstItem="QQp-A1-b2V" firstAttribute="top" secondItem="wnM-Gn-9QR" secondAttribute="top" constant="10" id="C0i-Nv-3Fd"/>
+                    <constraint firstItem="lRr-Mx-aSz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1AF-8n-GTZ" secondAttribute="trailing" constant="20" id="Drz-ED-5wj"/>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="lRr-Mx-aSz" secondAttribute="trailing" constant="45" id="HN3-1Z-6b7"/>
+                    <constraint firstItem="lRr-Mx-aSz" firstAttribute="leading" relation="lessThanOrEqual" secondItem="wnM-Gn-9QR" secondAttribute="leading" constant="146" id="IfL-eT-PmV"/>
+                    <constraint firstItem="1AF-8n-GTZ" firstAttribute="leading" secondItem="wnM-Gn-9QR" secondAttribute="leading" id="TUc-QX-D43"/>
+                    <constraint firstItem="qed-kI-OlQ" firstAttribute="top" secondItem="wnM-Gn-9QR" secondAttribute="top" constant="6" id="W4e-Va-n0m"/>
+                    <constraint firstItem="qed-kI-OlQ" firstAttribute="leading" secondItem="lRr-Mx-aSz" secondAttribute="trailing" constant="17" id="geQ-XV-pSj"/>
+                    <constraint firstAttribute="bottom" secondItem="1AF-8n-GTZ" secondAttribute="bottom" id="kWg-oi-r4S"/>
+                    <constraint firstItem="lRr-Mx-aSz" firstAttribute="leading" secondItem="QQp-A1-b2V" secondAttribute="trailing" constant="2" id="ora-SM-7WQ"/>
+                    <constraint firstItem="1AF-8n-GTZ" firstAttribute="top" secondItem="wnM-Gn-9QR" secondAttribute="top" id="x4w-0P-EEu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="amperageContainer" destination="qed-kI-OlQ" id="hn4-fY-BSN"/>
+                <outlet property="gfciImageView" destination="QQp-A1-b2V" id="kLv-4H-bGh"/>
+                <outlet property="nameLabel" destination="lRr-Mx-aSz" id="bxW-pz-dQl"/>
+                <outlet property="onOffSwitchContainer" destination="1AF-8n-GTZ" id="EzU-2Q-lN1"/>
+                <outlet property="switchContainer" destination="IBq-O7-wxC" id="P4k-kh-Hcg"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="breakerGFCI" width="11" height="24"/>
+    </resources>
+</document>

@@ -1,0 +1,30 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+    #import "SWRevealViewController.h"
+    #import "UIColor+AppTheme.h"
+    #import "UbiquityStoreManager.h"
+    #import "UITableViewController+CoreDataiCloud.h"
+
+    #ifdef DEBUG
+    #   define NSLog(...) NSLog(__VA_ARGS__)
+    #else
+    #   define NSLog(...)
+    #endif
+
+#endif
+
+#define IS_FOUR_INCH_SCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )

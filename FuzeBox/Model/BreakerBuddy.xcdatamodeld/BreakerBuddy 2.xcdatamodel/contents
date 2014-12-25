@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Breaker" representedClassName="Breaker" syncable="YES">
+        <attribute name="amperage" optional="YES" attributeType="Integer 32" defaultValueString="15" syncable="YES"/>
+        <attribute name="breakerOrientation" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName="" syncable="YES"/>
+        <attribute name="doublePole" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="gfci" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="on" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="panelColumn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="panelRow" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="punchout" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="tandem" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="fixtures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fixture" inverseName="breaker" inverseEntity="Fixture" syncable="YES"/>
+        <relationship name="panel" maxCount="1" deletionRule="Nullify" destinationEntity="Panel" inverseName="breakers" inverseEntity="Panel" syncable="YES"/>
+    </entity>
+    <entity name="Fixture" representedClassName="Fixture" syncable="YES">
+        <attribute name="iconIndex" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sectionDisplayName" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
+        <relationship name="breaker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Breaker" inverseName="fixtures" inverseEntity="Breaker" syncable="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="fixtures" inverseEntity="Room" syncable="YES"/>
+    </entity>
+    <entity name="House" representedClassName="House" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="panels" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Panel" inverseName="house" inverseEntity="Panel" syncable="YES"/>
+        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Room" inverseName="house" inverseEntity="Room" syncable="YES"/>
+    </entity>
+    <entity name="Panel" representedClassName="Panel" syncable="YES">
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="breakers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Breaker" inverseName="panel" inverseEntity="Breaker" syncable="YES"/>
+        <relationship name="house" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="House" inverseName="panels" inverseEntity="House" syncable="YES"/>
+    </entity>
+    <entity name="Room" representedClassName="Room" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fixtures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fixture" inverseName="room" inverseEntity="Fixture" syncable="YES"/>
+        <relationship name="house" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="House" inverseName="rooms" inverseEntity="House" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Breaker" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Fixture" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="House" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Panel" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Room" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
